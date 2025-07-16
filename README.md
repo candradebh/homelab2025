@@ -1,9 +1,13 @@
-# 🏡 Homelab
-Meu Homelab em 2025
+## Homelab2025
 
+Automação e gerenciamento do meu homelab com Kubernetes (K3s) + Ansible + MkDocs.
 
-## k3s
+### Como iniciar
 
-- fork k3s-ansible
-- add submodule
+```bash
+git clone --recurse-submodules https://github.com/candradebh/homelab2025.git
+cd homelab2025
+make k3s
+
+```
 
