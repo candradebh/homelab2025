@@ -1,0 +1,7 @@
+Iniciando meu projeto de homelab
+
+Fiz um fork nesse projeto https://github.com/k3s-io/k3s-ansible
+
+E agora vou adicionar como submodulo do meu projeto homelab2025 :
+
+git submodule add https://github.com/candradebh/k3s-ansible.git infra/k3s
