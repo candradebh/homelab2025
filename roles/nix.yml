@@ -1,4 +1,5 @@
-- hosts: server
+- name: Configurando Nix
+  hosts: localhost
   become: true
   roles:
     - role: nix
