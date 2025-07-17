@@ -46,6 +46,9 @@ Clone o repositorio na máquina em que vai deployar a aplicação.
 ```bash
 git clone --recurse-submodules https://github.com/candradebh/homelab2025.git
 cd homelab2025
+
+#ou se ja tiver clonado
+git submodule update --init --recursive
 ```
 
 #### Altere o arquivo inventory.yml
