@@ -2,14 +2,33 @@
 
 Automação e gerenciamento do meu homelab com Kubernetes (K3s) + Ansible + MkDocs.
 
-### Pre requisitos
+### VMS do Cluster
+Criar VMS ubuntu 22 e acesso ssh com root, segui esses ips, pois são os da minha rede e já estão estáticos no meu roteador.
+
+BC:24:11:8E:3E:F6 - 192.168.1.50 - kubmaster1
+BC:24:11:FB:96:1C - 192.168.1.51 - kubmaster2
+BC:24:11:CA:E2:86 - 192.168.1.52 - kubmaster3
+BC:24:11:8E:3E:F7 - 192.168.1.53 - kubnode1
 
 - Ubuntu ≥ 22 
-- Python ≥ 3.8
-- Ansible ≥ 2.15
-- OpenTofu (terraform)
+
 - Chave SSH com acesso root aos nós do cluster
 - Git + Make + OpenSSH
+
+### SSH Root
+
+```bash
+# altere a senha
+echo "root:Rapadura@123" | sudo chpasswd
+
+#edite o arquivo
+sudo sed -i 's/^#\?\s*PermitRootLogin .*/PermitRootLogin yes/' /etc/ssh/sshd_config
+sudo sed -i 's/^#\?\s*PasswordAuthentication .*/PasswordAuthentication yes/' /etc/ssh/sshd_config
+
+#reinicie o ssh
+sudo systemctl restart ssh
+
+```
 
 ### Como iniciar
 

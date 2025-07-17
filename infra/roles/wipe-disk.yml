@@ -1,0 +1,10 @@
+- name: Wipe disk /dev/sdb
+  hosts: all
+  become: yes
+  tasks:
+    - name: Remove filesystem signatures from /dev/sdb
+      command: wipefs -a /dev/sdb
+
+    - name: Discard blocks on /dev/sdb (fallback to zeroing if blkdiscard fails)
+      shell: |
+        blkdiscard /dev/sdb || dd if=/dev/zero of=/dev/sdb bs=1M count=100
