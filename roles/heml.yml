@@ -1,7 +1,0 @@
-# install-helm.yml
-- name: Instala Helm nas máquinas-alvo
-  hosts: server
-  become: true
-  roles:
-    - helm
-

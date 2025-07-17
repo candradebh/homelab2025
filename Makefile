@@ -5,7 +5,7 @@
 KUBECONFIG = ~/.kube/config
 KUBE_CONFIG_PATH = $(KUBECONFIG)
 
-default: k3s cilium
+default: k3s copy-project
 
 ########### CLuster
 k3s:
@@ -26,7 +26,7 @@ k3s-reboot:
 
 ########### Files
 copy-project:
-	ansible-playbook infra/roles/copy-project.yml -i inventory.yml
+	ansible-playbook ./infra/roles/copy-project.yml -i inventory.yml
 
 wipe-disk:
 	ansible-playbook ./infra/roles/copy-project.yml -i inventory.yml

@@ -1,0 +1,11 @@
+- name: Instalar o helm
+  hosts: server
+  roles:
+    - helm
+
+- name: Install Kubernetes addons
+  hosts: localhost
+  roles:
+    - cilium
+
+

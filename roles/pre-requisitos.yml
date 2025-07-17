@@ -1,0 +1,5 @@
+- name: Libera SSH e Limpa discos auxiliares
+  hosts: all
+  roles:
+    - ssh_root
+    #- wipe-disk
