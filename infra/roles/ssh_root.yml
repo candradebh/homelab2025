@@ -1,4 +1,4 @@
 - hosts: all
   become: true
   roles:
-    - ssh_root_access
+    - ssh_root
