@@ -1,0 +1,15 @@
+# roles/nix/meta/main.yml
+---
+galaxy_info:
+  role_name: nix
+  author: Seu Nome
+  description: "Instala o Nix multi‑usuário via Ansible"
+  license: MIT
+  min_ansible_version: 2.9
+  platforms:
+    - name: EL
+      versions: all
+    - name: Debian
+      versions: all
+    - name: Ubuntu
+      versions: all

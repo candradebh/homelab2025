@@ -1,0 +1,9 @@
+- hosts: server
+  become: true
+  roles:
+    - role: nix
+      vars:
+        nix_version: "2.28.3"
+        nix_commands:
+          - "nix-shell -p nix-info --command nix-info"
+        flakes: true
