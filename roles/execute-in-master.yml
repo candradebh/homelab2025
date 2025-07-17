@@ -1,4 +1,5 @@
-- hosts: server
+- name: Executando no master alguns comandos
+  hosts: server
   tasks:
     - name: Criar diretório se não existir
       ansible.builtin.file:
@@ -25,17 +26,17 @@
       delegate_to: localhost
       run_once: true
 
-    - name: Instalar o cillium
-      when: inventory_hostname == groups['server'][0]
-      ansible.builtin.shell: |
-        make
-      args:
-        chdir: "{{ path_project_master_node }}"
-
     - name: Executar nix develop no master1
       when: inventory_hostname == groups['server'][0]
       ansible.builtin.shell: |
         nix develop
+      args:
+        chdir: "{{ path_project_master_node }}"
+
+    - name: Instalar o cillium
+      when: inventory_hostname == groups['server'][0]
+      ansible.builtin.shell: |
+        make cilium
       args:
         chdir: "{{ path_project_master_node }}"
 

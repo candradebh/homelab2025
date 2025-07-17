@@ -1,11 +1,9 @@
-- name: Instalar o helm
+- name: Instalar o helm e o Nix
   hosts: server
   roles:
     - helm
+    - nix
 
-- name: Install Kubernetes addons
-  hosts: localhost
-  roles:
-    - cilium
+
 
 

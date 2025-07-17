@@ -5,7 +5,7 @@
 KUBECONFIG = ~/.kube/config
 KUBE_CONFIG_PATH = $(KUBECONFIG)
 
-default: k3s copy-project
+default: k3s cluster-addons execute-in-master
 
 ########### CLuster
 k3s:
@@ -36,8 +36,11 @@ cilium:
 	ansible-playbook ./roles/cilium.yml -i inventory.yml
 
 ########### Util
-helm:
-	ansible-playbook ./roles/heml.yml -i inventory.yml
+execute-in-master:
+	ansible-playbook ./roles/execute-in-master.yml -i inventory.yml
+
+cluster-addons:
+	ansible-playbook ./roles/cluster-addons.yml -i inventory.yml
 
 ssh-root:
 	ansible-playbook ./infra/roles/ssh_root.yml -i inventory.yml
