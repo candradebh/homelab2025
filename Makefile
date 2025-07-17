@@ -36,6 +36,9 @@ cilium:
 helm:
 	ansible-playbook ./infra/roles/helm.yml -i inventory.yml
 
+ssh-root:
+	ansible-playbook ./infra/roles/ssh_root.yml -i inventory.yml
+
 docs:
 	mkdocs serve
 

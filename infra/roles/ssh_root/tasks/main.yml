@@ -1,0 +1,13 @@
+- name: Garante que ~/.ssh existe
+  file:
+    path: /root/.ssh
+    state: directory
+    owner: root
+    group: root
+    mode: '0700'
+
+- name: Copia chave pública para authorized_keys do root
+  authorized_key:
+    user: root
+    state: present
+    key: "{{ lookup('file', '~/.ssh/id_ed25519.pub') }}"
