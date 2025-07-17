@@ -1,5 +1,5 @@
 - name: Install Cilium
-  ignore_errors: true
+  when: inventory_hostname == groups['server'][0]
   kubernetes.core.helm:
     name: cilium
     chart_ref: cilium
@@ -7,6 +7,10 @@
     chart_version: "{{ cilium_version }}"
     release_namespace: "{{ cilium_namespace }}"
     values: "{{ cilium_values }}"
+    state: present
+    force: true
+    wait: true
+    wait_timeout: 600s
 
 - name: Wait for Cilium CRDs
   kubernetes.core.k8s_info:

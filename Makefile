@@ -33,11 +33,11 @@ wipe-disk:
 
 ########### Network
 cilium:
-	ansible-playbook ./infra/roles/cilium.yml -i inventory.yml
+	ansible-playbook ./roles/cilium.yml -i inventory.yml
 
 ########### Util
 helm:
-	ansible-playbook ./roles/helm.yml -i inventory.yml
+	ansible-playbook ./roles/heml.yml -i inventory.yml
 
 ssh-root:
 	ansible-playbook ./infra/roles/ssh_root.yml -i inventory.yml
