@@ -30,6 +30,17 @@ sudo systemctl restart ssh
 
 ```
 
+Agora tem que adicionar a ssh em cada nó
+
+```bash
+
+for ip in 192.168.1.50 192.168.1.51 192.168.1.52 192.168.1.53; do
+  echo "➡️ Copiando chave para $ip..."
+  ssh-copy-id -i ~/.ssh/id_ed25519.pub root@$ip
+done
+
+```
+
 ### Como iniciar
 
 #### Preparando a maquina de deployer
