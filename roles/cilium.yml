@@ -1,4 +1,0 @@
-- name: Install Cilium no Master diretamente
-  hosts: localhost
-  roles:
-    - cilium

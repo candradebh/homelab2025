@@ -20,7 +20,7 @@ k3s_cluster:
 
     load_balancer_ip_pool: 192.168.1.192/27
 
-    path_project_master_node: "/tmp/multiversonline/"
+    path_project_master_node: "/tmp/homelab2025/"
 
     ssh_public_key: "{{ lookup('file', '~/.ssh/id_ed25519.pub') }}"
 
