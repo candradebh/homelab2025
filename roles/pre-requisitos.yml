@@ -1,3 +1,4 @@
+# Deve ser chamado em separado para automatizar o acesso ao root (testar mais)
 - name: Libera SSH e Limpa discos auxiliares
   hosts: all
   roles:

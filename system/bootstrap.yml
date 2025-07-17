@@ -1,5 +1,7 @@
 - name: Bootstrapping the cluster
   hosts: localhost
+  vars:
+    path_project: "/tmp/multiversonline/system/argocd"
   tasks:
     - name: Create ArgoCD namespace
       kubernetes.core.k8s:
