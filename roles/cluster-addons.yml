@@ -3,9 +3,15 @@
   roles:
     - helm
 
+- name: Copy project to server master
+  hosts: server
+  roles:
+    - copy-project
+
 - name: Install Kubernetes addons
   hosts: localhost
   roles:
     - cilium
+
 
 

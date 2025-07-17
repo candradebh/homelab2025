@@ -1,0 +1,29 @@
+- name: Criar diretório se não existir
+  ansible.builtin.file:
+    path: "{{ path_project_master_node }}"
+    state: directory
+    mode: '0777'
+    owner: "{{ ansible_user | default('root') }}"
+    group: "{{ ansible_user | default('root') }}"
+
+
+- name: Sincronizar projeto do host local para o nó master
+  ansible.posix.synchronize:
+    src: "../../"
+    dest: "{{ path_project_master_node }}"
+    recursive: yes
+    delete: no
+    rsync_opts:
+      - "--exclude=.git"
+      - "--exclude=.idea/"
+      - "--exclude=.DS_Store"
+      - "--exclude=__pycache__"
+      - "--exclude=k3s-ansible/"
+      - "--exclude=ProxmoxVE/"
+  delegate_to: localhost
+  run_once: true
+
+
+- name: Corrige permissões
+  ansible.builtin.command: chown -R root:root "{{ path_project_master_node }}"
+  become: true
