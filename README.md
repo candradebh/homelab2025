@@ -19,7 +19,7 @@ BC:24:11:8E:3E:F7 - 192.168.1.53 - kubnode1
 
 ```bash
 # altere a senha
-echo "root:Rapadura@123" | sudo chpasswd
+echo "root:Rapa" | sudo chpasswd
 
 #edite o arquivo
 sudo sed -i 's/^#\?\s*PermitRootLogin .*/PermitRootLogin yes/' /etc/ssh/sshd_config

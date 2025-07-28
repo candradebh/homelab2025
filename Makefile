@@ -5,7 +5,7 @@
 KUBECONFIG = ~/.kube/config
 KUBE_CONFIG_PATH = $(KUBECONFIG)
 
-default: k3s cluster-addons execute-in-master
+default: k3s system external post-install
 
 ########### CLuster
 k3s:
@@ -23,6 +23,18 @@ k3s-upgrade:
 k3s-reboot:
 	cd infra/k3s && \
 	ansible-playbook playbooks/reboot.yml -i ../../inventory.yml
+
+system:
+	make -C system
+
+external:
+	make -C external
+
+smoke-test:
+	make -C test filter=Smoke
+
+post-install:
+	@./scripts/hacks
 
 ########### Files
 copy-project:

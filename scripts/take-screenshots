@@ -15,23 +15,23 @@ from selenium import webdriver
 apps = [
     {
         'name': 'home',
-        'url': 'https://home.khuedoan.com'
+        'url': 'https://home.multiversonline.com.br'
     },
     {
         'name': 'gitea',
-        'url': 'https://git.khuedoan.com/ops/homelab'
+        'url': 'https://git.multiversonline.com.br/ops/homelab'
     },
     {
         'name': 'argocd',
-        'url': 'https://argocd.khuedoan.com/applications/root'
+        'url': 'https://argocd.multiversonline.com.br/applications/root'
     },
     {
         'name': 'matrix',
-        'url': 'https://chat.khuedoan.com/#/room/#random:matrix.khuedoan.com'
+        'url': 'https://chat.multiversonline.com.br/#/room/#random:matrix.multiversonline.com.br'
     },
     {
         'name': 'grafana',
-        'url': 'https://grafana.khuedoan.com/d/efa86fd1d0c121a26444b636a3f509a8/kubernetes-compute-resources-cluster'  # wtf is this ID
+        'url': 'https://grafana.multiversonline.com.br/d/efa86fd1d0c121a26444b636a3f509a8/kubernetes-compute-resources-cluster'  # wtf is this ID
     },
 ]
 
