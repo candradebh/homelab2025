@@ -1,5 +1,5 @@
 data "cloudflare_zone" "zone" {
-  name = "multiversonline.com.br"
+  name = "khuedoan.com"
 }
 
 data "cloudflare_api_token_permission_groups" "all" {}

@@ -19,7 +19,7 @@ app-template:
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-prod
       hosts:
-        - host: &host home.multiversonline.com.br
+        - host: &host home.khuedoan.com
           paths:
             - path: /
               pathType: Prefix
@@ -61,76 +61,76 @@ app-template:
         services.yaml: |
           - Popular:
             - Matrix:
-                href: https://chat.multiversonline.com.br
+                href: https://chat.khuedoan.com
                 description: Chat client
                 icon: element.svg
             - Jellyfin:
-                href: https://jellyfin.multiversonline.com.br
+                href: https://jellyfin.khuedoan.com
                 description: Media system (movies, music, etc.)
                 icon: jellyfin.svg
             - Jellyseerr:
-                href: https://jellyseerr.multiversonline.com.br
+                href: https://jellyseerr.khuedoan.com
                 description: Request media
                 icon: jellyseerr.svg
             - Paperless:
-                href: https://paperless.multiversonline.com.br
+                href: https://paperless.khuedoan.com
                 description: Document management system
                 icon: paperless.svg
           - Management:
             - Transmission:
-                href: https://transmission.multiversonline.com.br
+                href: https://transmission.khuedoan.com
                 description: Bittorrent client
                 icon: transmission.svg
             - Prowlarr:
-                href: https://prowlarr.multiversonline.com.br
+                href: https://prowlarr.khuedoan.com
                 description: Indexer manager
                 icon: prowlarr.svg
             - Radarr:
-                href: https://radarr.multiversonline.com.br
+                href: https://radarr.khuedoan.com
                 description: Movie manager
                 icon: radarr.svg
             - Sonarr:
-                href: https://sonarr.multiversonline.com.br
+                href: https://sonarr.khuedoan.com
                 description: TV show manager
                 icon: sonarr.svg
             - Kanidm:
-                href: https://auth.multiversonline.com.br
+                href: https://auth.khuedoan.com
                 description: Identity management
-                icon: https://auth.multiversonline.com.br/pkg/img/logo-square.svg
+                icon: https://auth.khuedoan.com/pkg/img/logo-square.svg
           - Development:
             - Gitea:
-                href: https://git.multiversonline.com.br
+                href: https://git.khuedoan.com
                 description: Git forge
                 icon: gitea.svg
             - Woodpecker:
-                href: https://ci.multiversonline.com.br
+                href: https://ci.khuedoan.com
                 description: Continuous integration
                 icon: woodpecker-ci.svg
             - ArgoCD:
-                href: https://argocd.multiversonline.com.br
+                href: https://argocd.khuedoan.com
                 description: Continuous deployment
                 icon: argocd.svg
             - Registry:
-                href: https://registry.multiversonline.com.br
+                href: https://registry.khuedoan.com
                 description: Container registry
                 icon: docker.svg
             - Grafana:
-                href: https://grafana.multiversonline.com.br
+                href: https://grafana.khuedoan.com
                 description: Observability dashboards
                 icon: grafana.svg
           - Utilities:
             - Excalidraw:
-                href: https://draw.multiversonline.com.br
+                href: https://draw.khuedoan.com
                 description: Virtual whiteboard
                 icon: excalidraw.svg
             - Speedtest:
-                href: https://speedtest.multiversonline.com.br
+                href: https://speedtest.khuedoan.com
                 description: Internal network speed test
                 icon: openspeedtest.png
         bookmarks.yaml: |
           - Homelab:
             - Documentation:
-              - href: https://homelab.multiversonline.com.br
+              - href: https://homelab.khuedoan.com
                 icon: google-docs.svg
             - Public homelab repository:
               - href: https://github.com/khuedoan/homelab
