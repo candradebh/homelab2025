@@ -1,5 +1,5 @@
 # Deve ser chamado em separado para automatizar o acesso ao root (testar mais)
-- name: Libera SSH e Limpa discos auxiliares
+- name: Libera SSH e limpa discos auxiliares nos hosts para o rook-ceph
   hosts: all
   roles:
     - ssh_root

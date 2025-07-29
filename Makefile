@@ -2,10 +2,10 @@
 .PHONY: *
 .EXPORT_ALL_VARIABLES:
 
-KUBECONFIG = ~/.kube/config
+KUBECONFIG = ./kubeconfig-homelab.yaml
 KUBE_CONFIG_PATH = $(KUBECONFIG)
 
-default: k3s system external post-install
+default: k3s configure-cluster system external post-install
 
 ########### CLuster
 k3s:
@@ -36,6 +36,26 @@ smoke-test:
 post-install:
 	@./scripts/hacks
 
+
+# TODO maybe there's a better way to manage backup with GitOps?
+backup:
+	./scripts/backup --action setup --namespace=actualbudget --pvc=actualbudget-data
+	./scripts/backup --action setup --namespace=jellyfin --pvc=jellyfin-data
+
+restore:
+	./scripts/backup --action restore --namespace=actualbudget --pvc=actualbudget-data
+	./scripts/backup --action restore --namespace=jellyfin --pvc=jellyfin-data
+
+test:
+	make -C test
+
+docs:
+	mkdocs serve
+
+git-hooks:
+	pre-commit install
+
+
 ########### Files
 copy-project:
 	ansible-playbook roles/copy-project.yml -i inventory.yml
@@ -55,7 +75,10 @@ cluster-addons:
 	ansible-playbook ./roles/cluster-addons.yml -i inventory.yml
 
 ssh-root:
-	ansible-playbook ./infra/roles/ssh_root.yml -i inventory.yml
+	ansible-playbook ./roles/ssh_root.yml -i inventory.yml
+
+configure-cluster:
+	ansible-playbook ./roles/configure-cluster.yml -i inventory.yml
 
 docs:
 	mkdocs serve

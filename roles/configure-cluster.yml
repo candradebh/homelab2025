@@ -1,0 +1,13 @@
+# Deve ser chamado em separado para automatizar o acesso ao root (testar mais)
+- name: Baixar e ajustar kubeconfig do cluster remoto
+  hosts: localhost
+  gather_facts: false
+  roles:
+    - fetch-kubeconfig
+
+- name: Install Kubernetes addons and
+  hosts: localhost
+  roles:
+    - cilium
+
+
