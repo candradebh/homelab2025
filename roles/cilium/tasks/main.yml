@@ -1,7 +1,8 @@
 - name: Install Cilium
+  ignore_errors: true
   kubernetes.core.helm:
     name: cilium
-    chart_ref: cilium
+    chart_ref: cilium/cilium
     chart_repo_url: "{{ cilium_repo_url }}"
     chart_version: "{{ cilium_version }}"
     release_namespace: "{{ cilium_namespace }}"
@@ -17,7 +18,7 @@
   register: crd
   until: crd.resources | length > 0
   retries: 5
-  delay: 10
+  delay: 15
 
 - name: Apply Cilium resources
   kubernetes.core.k8s:

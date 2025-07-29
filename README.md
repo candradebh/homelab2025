@@ -128,3 +128,9 @@ Aplicarndo:
 kubectl apply --server-side --force-conflicts -f argocd-render.yaml
 
 
+
+## testar em deployer o jkubectl
+export KUBECONFIG=$HOME/.kube/kubeconfig.yaml
+kubectl get nodes
+
+

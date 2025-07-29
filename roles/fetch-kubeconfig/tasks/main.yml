@@ -27,10 +27,4 @@
     regexp: 'https://127\.0\.0\.1:6443'
     replace: "https://{{ kubeconfig_source_ip }}:6443"
 
-# (Opcional) Criar symlink para ~/.kube/config
-- name: (Opcional) Criar symlink para ~/.kube/config
-  file:
-    src: "{{ kubeconfig_local_dir }}/{{ kubeconfig_local_filename }}"
-    dest: "{{ kubeconfig_local_dir }}/config"
-    state: link
-  when: not kubeconfig_local_filename == "config"
+
