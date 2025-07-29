@@ -18,7 +18,7 @@
       - "--exclude=.idea/"
       - "--exclude=.DS_Store"
       - "--exclude=__pycache__"
-      - "--exclude=k3s-ansible/"
+      - "--exclude=infra/"
       - "--exclude=ProxmoxVE/"
   delegate_to: localhost
   run_once: true
