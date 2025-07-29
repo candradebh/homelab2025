@@ -2,8 +2,8 @@
 .PHONY: *
 .EXPORT_ALL_VARIABLES:
 
-KUBECONFIG = ./kubeconfig-homelab.yaml
-KUBE_CONFIG_PATH = $(KUBECONFIG)
+KUBECONFIG := $(HOME)/.kube/kubeconfig.yaml
+KUBE_CONFIG_PATH := $(KUBECONFIG)
 
 default: k3s configure-cluster system external post-install
 
@@ -56,31 +56,14 @@ git-hooks:
 	pre-commit install
 
 
-########### Files
-copy-project:
-	ansible-playbook roles/copy-project.yml -i inventory.yml
+########### Antes de tudo
+pre-execute:
+	ansible-playbook roles/pre-execute.yml -i inventory.yml
 
-wipe-disk:
-	ansible-playbook ./infra/roles/copy-project.yml -i inventory.yml
-
-########### Network
-cilium:
-	ansible-playbook ./roles/cilium.yml -i inventory.yml
-
-########### Util
-execute-in-master:
-	ansible-playbook ./roles/execute-in-master.yml -i inventory.yml
-
-cluster-addons:
-	ansible-playbook ./roles/cluster-addons.yml -i inventory.yml
-
-ssh-root:
-	ansible-playbook ./roles/ssh_root.yml -i inventory.yml
-
+########### Apos o k3s
 configure-cluster:
 	ansible-playbook ./roles/configure-cluster.yml -i inventory.yml
 
-docs:
-	mkdocs serve
+
 
 
