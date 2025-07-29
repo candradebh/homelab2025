@@ -99,7 +99,7 @@ apt install nix-bin
 
 Terraform
 
-vIBzzSSy65JBfA.atlasv1.Tr4akglRgUqHrX7GyvWiqAhDgLV05lDzTITTHxxQtM9WgPjmomL3sgLapNW6afbjcEkCA
+
 
 New to HCP Terraform? Follow these steps to instantly apply an example configuration:
 
