@@ -1,9 +1,0 @@
-# roles/nix/vars/main.yml
----
-
-nix_version: "2.28.3"             # ou versão desejada
-installer_checksum: null          # defina se quiser checar integridade
-nix_commands: []                  # ex.: ["nix-shell -p nix-info --command nix-info"]
-flakes: true                      # se quiser ativar flakes
-config: {}                        # configurações extras para /etc/nix/nix.conf
-remove_nix_directory: true        # apagar /nix em upgrades, se false, mantém store

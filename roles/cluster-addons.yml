@@ -3,6 +3,7 @@
   roles:
     - helm
     - nix
+    - opentofu
 
 
 

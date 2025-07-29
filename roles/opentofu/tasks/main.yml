@@ -1,0 +1,24 @@
+---
+- name: Ensure unzip is installed
+  package:
+    name: unzip
+    state: present
+
+- name: Download OpenTofu archive
+  get_url:
+    url: "https://github.com/opentofu/opentofu/releases/download/v{{ opentofu_version }}/tofu_{{ opentofu_version }}_{{ opentofu_os }}_{{ opentofu_arch }}.zip"
+    dest: "/tmp/opentofu.zip"
+    mode: '0644'
+
+- name: Unarchive OpenTofu
+  unarchive:
+    src: "/tmp/opentofu.zip"
+    dest: "/usr/local/bin"
+    remote_src: yes
+    mode: '0755'
+
+- name: Ensure tofu is executable
+  file:
+    path: /usr/local/bin/tofu
+    mode: '0755'
+    state: file

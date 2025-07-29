@@ -1,0 +1,9 @@
+# roles/nix/vars/main.yml
+---
+
+nix_version: "2.28.3"
+installer_checksum: "46b8d7165dceb471f4346366b3a93f1009407b99729b843b8664918f4cc800a0"
+nix_commands: []
+flakes: true
+config: {}
+remove_nix_directory: true

@@ -91,3 +91,19 @@ ansible -i inventory.yml all -m ping
 make k3s
 
 ```
+
+## Instalar nix
+apt install nix-bin
+
+
+
+Terraform
+
+vIBzzSSy65JBfA.atlasv1.Tr4akglRgUqHrX7GyvWiqAhDgLV05lDzTITTHxxQtM9WgPjmomL3sgLapNW6afbjcEk
+
+New to HCP Terraform? Follow these steps to instantly apply an example configuration:
+
+$ git clone https://github.com/hashicorp/tfc-getting-started.git
+$ cd tfc-getting-started
+$ scripts/setup.sh
+

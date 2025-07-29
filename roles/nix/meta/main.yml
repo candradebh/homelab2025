@@ -2,7 +2,7 @@
 ---
 galaxy_info:
   role_name: nix
-  author: Seu Nome
+  author: Carlos
   description: "Instala o Nix multi‑usuário via Ansible"
   license: MIT
   min_ansible_version: 2.9

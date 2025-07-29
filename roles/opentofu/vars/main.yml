@@ -1,0 +1,4 @@
+---
+opentofu_version: "1.7.0"
+opentofu_os: "linux"
+opentofu_arch: "amd64"

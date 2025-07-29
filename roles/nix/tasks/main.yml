@@ -15,12 +15,18 @@
   failed_when: installer_checksum is defined and sum.stdout.split()[0] != installer_checksum
   when: installer_checksum is defined
 
-- name: Run Nix installer (multi-user)
-  ansible.builtin.command:
-    cmd: "/tmp/install-nix --daemon"
+- name: Run Nix installer (debug)
+  ansible.builtin.shell: "yes | /tmp/install-nix --daemon"
   become: true
   args:
     creates: /nix
+  register: nix_install
+  ignore_errors: yes
+
+- debug:
+    var: nix_install.stdout_lines
+
+
 
 - name: Ensure Nix daemon is enabled and running
   ansible.builtin.service:
@@ -35,4 +41,22 @@
     USER: "{{ ansible_user }}"
     NIX_PATH: "/nix/var/nix/profiles/default"
   become: false
+
+
+- name: Ensure ~/.config/nix exists
+  file:
+    path: "/{{ ansible_user }}/.config/nix"
+    state: directory
+    mode: '0755'
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+
+- name: Add experimental features to nix.conf
+  copy:
+    dest: "/{{ ansible_user }}/.config/nix/nix.conf"
+    content: |
+      experimental-features = nix-command flakes
+    mode: '0644'
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
 
