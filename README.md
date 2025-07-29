@@ -97,13 +97,34 @@ apt install nix-bin
 
 
 
-Terraform
+## Terraform
 
 
 
-New to HCP Terraform? Follow these steps to instantly apply an example configuration:
 
-$ git clone https://github.com/hashicorp/tfc-getting-started.git
-$ cd tfc-getting-started
-$ scripts/setup.sh
+## ARGO
+Rodei na mao em kubmaster1 no local onde copio a pasta
+
+Primeira instalação:
+
+helm template argocd ./argocd \
+-n argocd \
+--include-crds \
+-f argocd/values-seed.yaml \
+--dependency-update > argocd-render.yaml
+
+
+Senão: 
+
+helm template argocd ./argocd \
+-n argocd \
+--include-crds \
+-f argocd/values.yaml \
+--dependency-update > argocd-render.yaml
+
+
+
+Aplicarndo:
+kubectl apply --server-side --force-conflicts -f argocd-render.yaml
+
 
