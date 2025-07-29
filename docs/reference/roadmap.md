@@ -74,7 +74,7 @@ Can be used in "production" (for family or even small scale businesses).
     - [ ] VPN server
     - [ ] PeerTube
     - [x] Blog
-    - [ ] [Development dashboard](https://github.com/khuedoan/homelab-backstage)
+    - [ ] [Development dashboard](https://github.com/candradebh/homelab2025-backstage)
 
 ## Unplanned
 
@@ -85,5 +85,5 @@ Nice to have
 - [ ] Air-gap install
 - [ ] Automated testing
 - [ ] Security audit
-- [ ] Cluster API ([last attempt](https://github.com/khuedoan/homelab/pull/2))
+- [ ] Cluster API ([last attempt](https://github.com/candradebh/homelab2025/pull/2))
 - [ ] Split DNS (requires a better router)
