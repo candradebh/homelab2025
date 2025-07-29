@@ -1,7 +1,7 @@
 terraform {
   required_version = "~> 1.7"
 
-  backend "remote" {
+  backend "local" {
     hostname     = "app.terraform.io"
     organization = "homelab2025"
 
