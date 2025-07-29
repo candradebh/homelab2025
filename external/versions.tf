@@ -6,7 +6,7 @@ terraform {
     organization = "multiversonline"
 
     workspaces {
-      name = "homelab-external"
+      name = "homelab2025"
     }
   }
 
