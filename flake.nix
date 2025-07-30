@@ -10,9 +10,11 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
-      in {
-        devShell = pkgs.mkShell {
-          packages = with pkgs; [
+      in
+      with pkgs;
+      {
+        devShells.default = mkShell {
+          packages = [
             ansible
             ansible-lint
             bmake
@@ -35,7 +37,7 @@
             libisoburn
             neovim
             openssh
-            opentofu
+            opentofu # Drop-in replacement for Terraform
             p7zip
             pre-commit
             qrencode
@@ -52,10 +54,6 @@
               rich
             ]))
           ];
-
-          shellHook = ''
-            echo "✅ Entrou no ambiente dev do homelab2025!"
-          '';
         };
       }
     );
