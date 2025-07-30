@@ -2,7 +2,7 @@
   ignore_errors: true
   kubernetes.core.helm:
     name: cilium
-    chart_ref: cilium/cilium
+    chart_ref: cilium
     chart_repo_url: "{{ cilium_repo_url }}"
     chart_version: "{{ cilium_version }}"
     release_namespace: "{{ cilium_namespace }}"
