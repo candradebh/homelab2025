@@ -49,7 +49,6 @@ done
 sudo apt update
 sudo apt install -y nix-bin make ansible
 pip3 install --upgrade pip
-#ansible-galaxy install -r infra/k3s/requirements.yml
 ```
 
 Clone o repositorio na máquina em que vai deployar a aplicação. 
